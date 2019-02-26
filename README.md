@@ -1,19 +1,30 @@
-* **The requirements for Project #2 are as follows:**
+# project2
 
-  * Must use a Node and Express Web Server
+> A Vue.js project
 
-  * Must be backed by a MySQL Database with a Sequelize ORM  
+## Build Setup
 
-  * Must have both GET and POST routes for retrieving and adding new data
+``` bash
+# install dependencies
+npm install
 
-  * Must be deployed using Heroku (with Data)
+# serve with hot reload at localhost:8080
+npm run dev
 
-  * Must utilize at least one new library, package, or technology that we haven’t discussed
+# build for production with minification
+npm run build
 
-  * Must have a polished frontend / UI 
+# build for production and view the bundle analyzer report
+npm run build --report
 
-  * Must have folder structure that meets MVC Paradigm
+# run unit tests
+npm run unit
 
-  * Must meet good quality coding standards (indentation, scoping, naming)
+# run e2e tests
+npm run e2e
 
-  * Must not expose sensitive API key information on the server, see [Protecting-API-Keys-In-Node.md](../../../../01-Class-Content/10-nodejs/03-Supplemental/Protecting-API-Keys-In-Node.md)
+# run all tests
+npm test
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

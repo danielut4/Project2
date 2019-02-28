@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-  var User = sequelize.define('User', {
+  var Note = sequelize.define('Note', {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -10,11 +10,13 @@ module.exports = function (sequelize, DataTypes) {
     password: DataTypes.STRING
   })
 
-  User.associate = function (models) {
-    User.hasMany(models.Book, {
-      onDelete: 'cascade'
+  Note.associate = function (models) {
+    Note.belongsTo(models.Book, {
+      foreignKey: {
+        allowNull: false
+      }
     })
   }
 
-  return User
+  return Note
 }

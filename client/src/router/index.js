@@ -18,34 +18,5 @@ export default new Router({
       name: 'register',
       component: register
     }
-    // {
-    //   path: '/login',
-    //   name: 'login',
-    //   component: Login
-    // },
-    // {
-    //   path: '/songs',
-    //   name: 'songs',
-    //   component: Songs
-    // },
-    // {
-    //   path: '/songs/create',
-    //   name: 'songs-create',
-    //   component: CreateSong
-    // },
-    // {
-    //   path: '/songs/:songId',
-    //   name: 'song',
-    //   component: ViewSong
-    // },
-    // {
-    //   path: '/songs/:songId/edit',
-    //   name: 'song-edit',
-    //   component: EditSong
-    // },
-    // {
-    //   path: '*',
-    //   redirect: 'songs'
-    // }
   ]
 })

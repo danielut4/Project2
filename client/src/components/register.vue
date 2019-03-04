@@ -1,50 +1,55 @@
 <template>
-  <div>
-    <h1>Register</h1>
-    <input type="email" name="email" placeholder="email" v-model="email">
-    <br>
-    <input type="password" name="password" placeholder="password" v-model="password">
-    <br>
-    <button @click="register">Submit</button>
-  </div>
+  <v-layout column>
+    <v-flex xs6 offset-xs3>
+      <panel title="Register">
+        <form name="tab-tracker-form" autocomplete="off">
+          <v-text-field label="Email" v-model="email"></v-text-field>
+          <br>
+          <v-text-field
+            label="Password"
+            type="password"
+            v-model="password"
+            autocomplete="new-password"
+          ></v-text-field>
+        </form>
+        <br>
+        <div class="danger-alert" v-html="error"/>
+        <br>
+        <v-btn dark class="cyan" @click="register">Register</v-btn>
+      </panel>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
-import authenticationService from '@/services/authenticationService'
+import AuthenticationService from "@/services/AuthenticationService";
 export default {
-  name: 'register',
-  data () {
+  data() {
     return {
-      email: '',
-      password: ''
-    }
+      email: "",
+      password: "",
+      error: null
+    };
   },
   methods: {
-    async register () {
-      const response = await authenticationService.register({
-        email: this.email,
-        password: this.password
-      })
-      console.log(response.data)
+    async register() {
+      try {
+        const response = await AuthenticationService.register({
+          email: this.email,
+          password: this.password
+        });
+        this.$store.dispatch("setToken", response.data.token);
+        this.$store.dispatch("setUser", response.data.user);
+        this.$router.push({
+          name: "songs"
+        });
+      } catch (error) {
+        this.error = error.response.data.error;
+      }
     }
   }
-}
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>

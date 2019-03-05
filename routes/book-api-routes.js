@@ -3,7 +3,9 @@ var passport = require("../config/passport");
 
 module.exports = function (app) {
     app.get("/api/:userid/books/", function (req, res) {
-        db.Book.findAll({});
+        var books = db.Book.findAll({});
+        console.log(books);
+        res.render("home", {books: books})
     });
 
     app.post("api/create/book", function (req, res) {

@@ -3,11 +3,12 @@ module.exports = function (sequelize, DataTypes) {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      autoIncrement: true
     },
-    username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING
+    note_category: DataTypes.STRING,
+    heading: DataTypes.STRING,
+    text: DataTypes.STRING
   })
 
   Note.associate = function (models) {

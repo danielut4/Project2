@@ -3,10 +3,10 @@ module.exports = function (sequelize, DataTypes) {
       id: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true, 
+        autoIncrement: true
       },
-      title: DataTypes.STRING,
-      category: DataTypes.STRING
+      title: DataTypes.STRING
     })
   
     Book.associate = function (models) {

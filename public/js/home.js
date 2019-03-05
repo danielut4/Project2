@@ -38,7 +38,6 @@ $(document).ready(function() {
             title: title.val().trim(),
             UserId: UserId
         })
-        
     }
 
     function upsertBook(bookData){

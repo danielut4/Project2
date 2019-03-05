@@ -43,6 +43,7 @@ module.exports = function(app) {
     }).then(function(bookData){
       console.log("bookdata", bookData)
       var bookName = bookData.title;
+      var bookId = bookData.id;
       db.Note.findAll({
         where: {
           BookId: bookData.id
@@ -50,7 +51,8 @@ module.exports = function(app) {
       }).then(function (notesData) {
         res.render("bookview", {
           title: bookName,
-          notes: notesData
+          notes: notesData,
+          bookId: bookId
         })
       })
     }

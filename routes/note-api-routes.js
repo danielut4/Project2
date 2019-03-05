@@ -16,9 +16,12 @@ module.exports = function (app) {
 
     app.post("/api/createNote", function (req, res) {
         db.Note.create({
-            title: req.body.title,
-            UserId: req.body.UserId
+            heading: req.body.heading,
+            text: req.body.text,
+            note_category: req.body.note_category,
+            BookId: req.body.BookId
         }).then (function (dbNote) {
+            res.json(dbNote)
              console.log(dbNote)
         });
     });

@@ -48,6 +48,7 @@ module.exports = function(app) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
+      console.log("not logged in")
     }
     else {
       // Otherwise send back the user's email and id

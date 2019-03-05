@@ -1,9 +1,14 @@
-<h1>Your Books</h1>
-
-<ul>
-    {{#each books}}
+<h1>Logged in as {{email}}</h1>
+<ul id="bookList">
+    
 </ul>
 
 <div>
-    <button id="newBook" class="">New Book</button>
+    <input type="text" id="titleInput" placeholder="Book name">
 </div>
+
+<div>
+    <button id="newBook">Add New Book</button>
+</div>
+
+<script src="js/home.js"></script>

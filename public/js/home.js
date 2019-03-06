@@ -11,7 +11,6 @@ $(document).ready(function() {
         console.log(data);
         books = data;
         console.log("Booooks:", books)
-        addBookstoScreen(books);
     })
 
     var title = $("#titleInput")
@@ -33,8 +32,9 @@ $(document).ready(function() {
         
         $.post("/api/createBook", bookData)
         .then(function(data) {
-            window.location.replace(data)
             console.log("book was added", bookData)
+            window.location.replace("/home")
+            location.reload(true);
         })
     }
 

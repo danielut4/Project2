@@ -31,7 +31,7 @@ module.exports = function(app) {
   //route for registering
   app.post("/api/register", function(req, res) {
     db.User.create(req.body).then(function() {
-      res.redirect(307, "/api/login")
+      res.json("/login")
     }).catch(function(err) {
       console.log(err)
       res.json(err)

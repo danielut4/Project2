@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
         <h2>Register Here</h2>
-        <form class="login" action="POST" id="user-form">
+        <form class="login" id="user-form">
           <div class="form-group">
             <label for="email">Email address</label>
             <input type="email" class="form-control" id="email" placeholder="Email">
@@ -21,7 +21,7 @@
             <label for="pass">Password</label>
             <input type="password" class="form-control" id="pass" placeholder="Password">
           </div>
-          <button type="submit" value="submit" class="btn btn-default">Register</button>
+          <button type="button" value="submit" class="btn btn-dark" id="subUser">Register</button>
         </form>
         <br />
         <p>Or login <a href="/login">here</a></p>
@@ -32,6 +32,13 @@
 <style>
     #registerContainer{
         margin-top: 2rem;
+    }
+    #logout-nav{
+        display: none;
+    }
+    #subUser{
+      background: #fdd14d;
+      color: black;
     }
 </style>
 

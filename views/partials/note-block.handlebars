@@ -7,7 +7,7 @@
             </div>
 </div> --}}
 
-<div id="noteCard" class="card border-primary">
+<div id="noteCard" class="card border-primary note">
   <div class="card-body">
     <h3 class="card-title heading"><strong>{{heading}}</strong></h3>
     <p class="card-text">{{text}}</p>
@@ -18,14 +18,20 @@
 <style>
     #noteCard{
         margin-bottom: .5rem;
-        width: auto;
+        width: 75%;
         resize: both;
         overflow: auto;
     }
     .note{
-        background: lightyellow;
+        background: #fdd14d;
     }
     .heading{
         border-bottom: 2px dashed black;
+    }
+
+    @media screen and (max-width: 500px) {
+        #noteCard{
+            width: 100%;
+        }
     }
 </style>

@@ -11,6 +11,7 @@ $(document).ready(function() {
         $.post("/api/createNote", noteData)
         .then(function(data){
             // window.location.replace(data)
+            window.location.reload();
             console.log("note was added", data)
         })
     }
@@ -38,18 +39,15 @@ $(document).ready(function() {
     })
 
     function deleteBook() {
-       if(confirm("Are you sure you want to delete this book?")){
-
         $.ajax({
             url: "/api/delete/book/" + BookId,
             type: 'DELETE'
         })
         .then(function (data) {
             console.log("Book was deleted");
+            location.replace("/home")
         });
-       } else {
-           console.log('Book ' + BookId + ' not deleted')
-       } 
+       
     }
 
     

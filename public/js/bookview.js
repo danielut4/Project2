@@ -34,8 +34,28 @@ $(document).ready(function() {
 
     noteForm.on('submit', function(event){
         event.preventDefault();
-        alert("clicked")
         newNote()
+    })
+
+    function deleteBook() {
+       if(confirm("Are you sure you want to delete this book?")){
+
+        $.ajax({
+            url: "/api/delete/book/" + BookId,
+            type: 'DELETE'
+        })
+        .then(function (data) {
+            console.log("Book was deleted");
+        });
+       } else {
+           console.log('Book ' + BookId + ' not deleted')
+       } 
+    }
+
+    
+    $("#deleteBook").on('click', function (event){
+        event.preventDefault()
+        deleteBook()
     })
 
 })

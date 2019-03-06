@@ -12,7 +12,7 @@
 <h4>Notes</h4>
 <ul id="noteList">
     {{#each notes}}
-        <div class="note">
+        <div class="note" data-category="{{note_category}}">
             <div class="heading">
                 {{heading}}
             </div>
@@ -22,6 +22,11 @@
         </div>
     {{/each}}
 </ul>
+
+<br>
+<div>
+    <button type="button" id="deleteBook" class="btn btn-danger">Delete your book</button>
+</div>
 
 
 

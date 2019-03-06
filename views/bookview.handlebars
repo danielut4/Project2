@@ -5,13 +5,22 @@
 <select name="categorySelect" id="CategorySelect">
     <option value="" disabled selected>Categories</option>
 {{#each notes}}
-    <option value="{{category}}">{{category}}</option>
+    <option value="{{note_category}}">{{note_category}}</option>
 {{/each}}
 </select>
 
 <h4>Notes</h4>
 <ul id="noteList">
-    
+    {{#each notes}}
+        <div class="note">
+            <div class="heading">
+                {{heading}}
+            </div>
+            <div class="body">
+                {{text}}
+            </div>
+        </div>
+    {{/each}}
 </ul>
 
 

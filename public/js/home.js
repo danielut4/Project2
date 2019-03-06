@@ -18,17 +18,6 @@ $(document).ready(function() {
 
     $(document).on('click', '#newBook', newBook)
 
-    function addBookstoScreen(books){
-        books.forEach(book => {
-            var title = book.title
-            var newBook = $("<button>").html(title)
-            newBook.click(function(){
-                document.location.href = '/book/' + book.id
-            })
-            $("#bookList").append(newBook)
-        });
-    }
-
     function newBook(){
         if(!title.val().trim().trim()){
             return;

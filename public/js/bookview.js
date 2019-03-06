@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     var noteForm = $("form#note-form")
     var heading = $("input#heading")
-    var notebody = $("input#notebody")
+    var notebody = $("#notebody")
     var notecatg = $("input#notecategory")
     var BookId = $("#bookid").text()
 
@@ -19,9 +19,9 @@ $(document).ready(function() {
         console.log("Heading" + heading.val())
         console.log("body" + notebody.val())
         console.log("category" + notecatg.val())
-        if(!heading || !notebody || !notecatg){
-            return;
-        }
+        // if(!heading || !notebody){
+        //     return;
+        // }
 
         upsertNote({
             heading: heading.val(),

@@ -1,14 +1,49 @@
 <h1>Logged in as {{email}}</h1>
-<ul id="bookList">
-    
-</ul>
 
-<div>
-    <input type="text" id="titleInput" placeholder="Book name">
-</div>
+<div class="container">
+            <div class="row">
+                <input type="text" id="titleInput" placeholder="Book name">
+                <button id="newBook" class="btn btn-dark">Add New Book</button>
+            </div>
+        <div class="col-md-10" style="margin-top: 2rem;">
+            <div class="row">
+            {{#each books}}
+            {{> book-block}}
+            {{/each}}
+            </div>
+        </div>
+        
+    </div>
 
-<div>
-    <button id="newBook">Add New Book</button>
-</div>
+
+<style>
+    #newBook{
+        background: #fdd14d;
+        color: black;
+    }
+    footer {
+        display: none;
+    }
+
+    #top-jumbotron {
+        display: none;
+    }
+
+    .title-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+    #bookCard{
+        margin-left: .5rem;
+        margin-right: .5rem;
+        margin-bottom: .5rem;
+    }
+    #titleInput{
+        width: 50%;
+        margin-right: 5rem;
+    }
+</style>
 
 <script src="js/home.js"></script>

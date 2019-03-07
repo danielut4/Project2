@@ -1,7 +1,7 @@
 # Light Bulb
 A Bright Idea Application
 
-https://serene-journey-12862.herokuapp.com/
+https://lightbulb-notes.herokuapp.com/
 
 A google Keep Clone
 

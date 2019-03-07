@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     
     $("#deleteBook").on('click', function (event){
-        event.preventDefault()
+        // event.preventDefault()
         deleteBook()
     })
 

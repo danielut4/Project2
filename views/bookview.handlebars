@@ -1,0 +1,88 @@
+<div class="container">
+
+<div hidden id="bookid">{{bookId}}</div>
+<h1>Your Book: {{title}}</h1>
+
+{{!-- <select name="categorySelect" id="CategorySelect">
+    <option value="" disabled selected>Categories</option>
+{{#each notes}}
+    <option value="{{note_category}}">{{note_category}}</option>
+{{/each}}
+</select> --}}
+
+<h4>Notes</h4>
+<hr>
+  {{#each notes}}
+        {{> note-block}}
+    {{/each}}
+    
+    <br>
+<div>
+    <button type="button" id="deleteBook" class="btn btn-danger">Delete your book</button>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#noteModal">
+  Add new note
+</button>
+</div>
+    
+
+
+
+<!-- Modal -->
+<form id="note-form">
+<div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" id="modal-notehead">
+        <h5 class="modal-title" id="modaltitle">
+            <div class="form-group">
+            <input type="text" placeholder="Note Heading" id="heading" style="width: 100%;" autocomplete="off">
+            </div>
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="bodyWrapper">
+          <div class="form-group">
+            <textarea type="textbox" id="notebody" placeholder="Note goes here!" autocomplete="off"></textarea>
+          </div>
+          {{!-- <div class="form-group">
+            <input type="text" id="notecategory" placeholder="Note category!">
+          </div> --}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" id="saveNote">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+<style>
+  footer{
+    display: none;
+  }
+  #top-jumbotron{
+    display: none;
+  }
+  #modal-notehead{
+    width: 100%;
+  }
+  #modaltitle{
+    width: 100%;
+  }
+  #notebody{
+    width: 100%;
+    height: 100%;
+    
+  }
+
+</style>
+
+
+
+<script src="js/bookview.js" type="text/javascript"></script>

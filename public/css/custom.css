@@ -1,0 +1,21 @@
+#top-jumbotron {
+    text-align: center;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    clear: both;
+    background-color: #efefef;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1000px){
+      footer{
+          position: relative;
+          clear: both;
+      }
+  }

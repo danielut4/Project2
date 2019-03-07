@@ -31,7 +31,7 @@ module.exports = function(app) {
   //route for registering
   app.post("/api/register", function(req, res) {
     db.User.create(req.body).then(function() {
-      res.redirect(307, "/api/login")
+      res.json("/login")
     }).catch(function(err) {
       console.log(err)
       res.json(err)
@@ -42,6 +42,22 @@ module.exports = function(app) {
   app.get("/logout", function(req, res) {
     req.logout();
     res.redirect("/");
+  });
+
+  app.get("/api/user_data", function(req, res) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+      console.log("not logged in")
+    }
+    else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
   });
 
   app.delete("/api/users/:id", function(req, res) {

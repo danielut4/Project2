@@ -18,6 +18,9 @@ $(document).ready(function() {
 
     function upsertUser(userData) {
         $.post("/api/register", userData)
-          .then(console.log(userData));
+          .then(function(data){
+              console.log(userData)
+            location.replace("/login")
+            });
     }
 })

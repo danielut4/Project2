@@ -1,4 +1,37 @@
-<div class="container">
-    <a href="/register">Register</a>
-    <a href="/login">Log In</a>
+<div class="container" id="indexContainer">
+    <div class="jumbotron">
+        <h1 class="display-3">Online Sticky Notes!</h1>
+        <p class="lead">Organize your notes into books and access them
+            on the go!
+        </p>
+        <hr class="my-3">
+        <p class="lead">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="/register" class="btn btn-lg btn-dark" id="linkBtn">Register here</a>
+                </div>
+                <div class="col-md-4">
+                    <h1>~ or ~</h1>
+                </div>
+                <div class="col-md-4">
+                    <a href="/login" class="btn btn-lg btn-dark" id="linkBtn">Log In</a>
+                </div>
+            </div>
+        </p>
+    </div>
 </div>
+
+
+<style>
+    #indexContainer{
+        text-align: center;
+    }
+    #mainNav {
+        display: none;
+    }
+
+    #linkBtn {
+        background: #fdd14d;
+        color: black;
+    }
+</style>

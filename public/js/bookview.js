@@ -2,7 +2,7 @@ $(document).ready(function() {
 
     var noteForm = $("form#note-form")
     var heading = $("input#heading")
-    var notebody = $("input#notebody")
+    var notebody = $("#notebody")
     var notecatg = $("input#notecategory")
     var BookId = $("#bookid").text()
 
@@ -11,6 +11,7 @@ $(document).ready(function() {
         $.post("/api/createNote", noteData)
         .then(function(data){
             // window.location.replace(data)
+            window.location.reload();
             console.log("note was added", data)
         })
     }
@@ -19,9 +20,9 @@ $(document).ready(function() {
         console.log("Heading" + heading.val())
         console.log("body" + notebody.val())
         console.log("category" + notecatg.val())
-        if(!heading || !notebody || !notecatg){
-            return;
-        }
+        // if(!heading || !notebody){
+        //     return;
+        // }
 
         upsertNote({
             heading: heading.val(),
@@ -38,18 +39,15 @@ $(document).ready(function() {
     })
 
     function deleteBook() {
-       if(confirm("Are you sure you want to delete this book?")){
-
         $.ajax({
             url: "/api/delete/book/" + BookId,
             type: 'DELETE'
         })
         .then(function (data) {
             console.log("Book was deleted");
+            location.replace("/home")
         });
-       } else {
-           console.log('Book ' + BookId + ' not deleted')
-       } 
+       
     }
 
     

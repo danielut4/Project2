@@ -29,13 +29,21 @@ module.exports = function(app) {
   });
 
   app.get("/home", auth, function(req, res) {
-    res.render('home', {
-      id: req.user.id,
-      email: req.user.email
+    db.Book.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    }).then(function(books){
+      res.render('home', {
+        id: req.user.id,
+        email: req.user.email,
+        books: books
+      })
     })
+    
   })
 
-  app.get("/book/:bookId", auth, function(req, res){
+  app.get("/book:bookId", auth, function(req, res){
     db.Book.findOne({
       where: {
         id: req.params.bookId

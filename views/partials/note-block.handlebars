@@ -1,0 +1,37 @@
+{{!-- <div class="note" data-category="{{note_category}}">
+            <div class="heading">
+                {{heading}}
+            </div>
+            <div class="body">
+                {{text}}
+            </div>
+</div> --}}
+
+<div id="noteCard" class="card border-primary note">
+  <div class="card-body">
+    <h3 class="card-title heading"><strong>{{heading}}</strong></h3>
+    <p class="card-text">{{text}}</p>
+  </div>
+</div>
+
+
+<style>
+    #noteCard{
+        margin-bottom: .5rem;
+        width: 75%;
+        resize: both;
+        overflow: auto;
+    }
+    .note{
+        background: #fdd14d;
+    }
+    .heading{
+        border-bottom: 2px dashed black;
+    }
+
+    @media screen and (max-width: 500px) {
+        #noteCard{
+            width: 100%;
+        }
+    }
+</style>

@@ -20,6 +20,7 @@ module.exports = function (app) {
             UserId: req.body.UserId
         }).then (function (dbBook) {
              console.log(dbBook)
+             res.redirect("/home")
         });
     });
 
@@ -39,7 +40,7 @@ module.exports = function (app) {
                 id: req.params.id
             }
         }).then (function (dbBook) {
-            res.json(dbBook);
+            res.json("/home")
         });
     });
 };
